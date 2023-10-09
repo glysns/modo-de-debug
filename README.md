@@ -14,8 +14,9 @@ Bem-vindo a mais um projeto proporcionado pela Digytal com a finalidade de te di
 Abaixo segue todo o material apresentado em nossos vídeos no canal.
 
 |Pasta|Descrição|
-|----------|---------|-------|
-|[back](https://github.com/glysns/modo-de-debug/tree/main/back)|Conteúdo sobre tecnologias backend como Java, Node, .NET |Está pasta contém exemplo de códigos e outros conteúdos relacionados ao perfil Back-end|
+|----------|---------|
+|[back](https://github.com/glysns/modo-de-debug/tree/main/back) | Conteúdo sobre tecnologias backend como Java, Node, .NET | Está pasta contém exemplo de códigos e outros conteúdos relacionados ao perfil Back-end |
 |[front](https://github.com/glysns/modo-de-debug/tree/main/front)|Conteúdo sobre tecnologias backend como Java Script, Type Script, Vue JS |Está pasta contém exemplo de códigos e outros conteúdos relacionados ao perfil Front-end|
 |[ide](https://github.com/glysns/modo-de-debug/tree/main/ide)|Conteúdo sobre dicas e recursos das IDEs mais utilizadas pelos desenvolvedores |Está pasta contém exemplo que exploram os recursos das IDEs|
+|[uml](https://github.com/glysns/modo-de-debug/tree/main/uml)|Conteúdo sobre dicas para explorar o recursos de UML |Está pasta contém exemplos reais para exercitar lógica de programação e conceitos da orientação a objetos através da UML|
 
