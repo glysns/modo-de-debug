@@ -1,7 +1,5 @@
 
 # Digytal - Programação, Pesquisa e Educação
-[Canal Youtube](http://www.digytal.com.br](https://www.youtube.com/watch?v=Pv8F1I8VApc&list=PL8NbPylKQ8NkBraeFGIYC9bkwf65tpJpz)
-
 [(11) 95894-0362](https://api.whatsapp.com/send?phone=5511958940362)
 
 
@@ -9,6 +7,8 @@
 - [Gleyson Sampaio](https://github.com/glysns)
 
 ## Modo de Debug
+
+[Canal Youtube](https://www.youtube.com/watch?v=Pv8F1I8VApc&list=PL8NbPylKQ8NkBraeFGIYC9bkwf65tpJpz)
 
 Bem-vindo a mais um projeto proporcionado pela Digytal com a finalidade de te direcionar em relação ao teu aprendizado das tecnologias mais utilizadas para desenvolvimento de softwares.
 Abaixo segue todo o material apresentado em nossos vídeos no canal.
