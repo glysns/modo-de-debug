@@ -1,6 +1,6 @@
 
 # Digytal - Programação, Pesquisa e Educação
-[www.digytal.com.br](http://www.digytal.com.br)
+[Canal Youtube]([http://www.digytal.com.br](https://www.youtube.com/watch?v=Pv8F1I8VApc&list=PL8NbPylKQ8NkBraeFGIYC9bkwf65tpJpz))
 
 [(11) 95894-0362](https://api.whatsapp.com/send?phone=5511958940362)
 
