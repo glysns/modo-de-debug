@@ -1,3 +1,5 @@
+package operacoes;
+
 public class Transacao {
     private Long id;
     private String descricao;

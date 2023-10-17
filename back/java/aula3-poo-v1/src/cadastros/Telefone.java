@@ -1,3 +1,5 @@
+package cadastros;
+
 public class Telefone {
     private Integer ddi;
     private Integer ddd;

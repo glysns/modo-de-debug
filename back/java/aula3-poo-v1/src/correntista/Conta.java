@@ -1,3 +1,4 @@
+package correntista;
 
 public class Conta {
     private String numero;

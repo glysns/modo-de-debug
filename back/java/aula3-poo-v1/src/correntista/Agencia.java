@@ -1,3 +1,5 @@
+package correntista;
+
 public class Agencia {
     private String cnpj;
     private String numero;

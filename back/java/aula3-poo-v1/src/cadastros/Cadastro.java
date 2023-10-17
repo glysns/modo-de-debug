@@ -1,8 +1,11 @@
+package cadastros;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Cadastro {
     private String nome;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private String cpf;
 
     public String getNome() {
@@ -13,11 +16,11 @@ public class Cadastro {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

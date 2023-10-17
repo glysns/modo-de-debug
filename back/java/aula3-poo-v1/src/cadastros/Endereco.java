@@ -1,3 +1,5 @@
+package cadastros;
+
 public class Endereco {
     private String cep;
     private String logradouro;

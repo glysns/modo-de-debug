@@ -1,3 +1,5 @@
+package cadastros;
+
 public class Cidade {
     private String nome;
 
