@@ -13,6 +13,9 @@
 Bem-vindo a mais um projeto proporcionado pela Digytal com a finalidade de te direcionar em relação ao teu aprendizado das tecnologias mais utilizadas para desenvolvimento de softwares.
 Abaixo segue todo o material apresentado em nossos vídeos no canal.
 
+### Case de Estudos
+Pé-de-meia é um projeto simples de simulação de aplicação financeira baseado na lógica de que aplicações diárias receberã uma alíquota específica de rentabilidade.
+
 |Pasta|Descrição|
 |----------|---------|
 |[back](https://github.com/glysns/modo-de-debug/tree/main/back) | Conteúdo sobre tecnologias backend como Java, Node, .NET | Está pasta contém exemplo de códigos e outros conteúdos relacionados ao perfil Back-end |
