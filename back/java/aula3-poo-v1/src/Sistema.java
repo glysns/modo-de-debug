@@ -27,7 +27,7 @@ public class Sistema {
         agencia.setNumero("3345-0");
 
         Sexo.MASCULINO.toString();
-        Uf.MA.toString();
+        Uf.PI.toString();
         EstadoCivil.CASADO.toString();
     }
 }
