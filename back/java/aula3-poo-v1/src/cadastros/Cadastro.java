@@ -16,6 +16,45 @@ public class Cadastro {
     private Sexo sexo;
     private EstadoCivil estadoCivil;
 
+    private Cidade cidade;
+
+    private Telefone telefone;
+    private TelefoneTipo telefoneTipo;
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
+    }
+
+    public TelefoneTipo getTelefoneTipo() {
+        return telefoneTipo;
+    }
+
+    public void setTelefoneTipo(TelefoneTipo telefoneTipo) {
+        this.telefoneTipo = telefoneTipo;
+    }
+
+    private Uf uf;
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
+
+    public Uf getUf() {
+        return uf;
+    }
+
+    public void setUf(Uf uf) {
+        this.uf = uf;
+    }
+
     public Conta getConta() {
         return conta;
     }
