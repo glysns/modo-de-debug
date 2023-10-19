@@ -2,6 +2,15 @@ package cadastros;
 
 public class Cidade {
     private String nome;
+    private Uf uf;
+
+    public void setUf(Uf uf) {
+        this.uf = uf;
+    }
+
+    public Uf getUf() {
+        return uf;
+    }
 
     public String getNome() {
         return nome;

@@ -5,6 +5,15 @@ public class Endereco {
     private String logradouro;
     private String numero;
     private String bairro;
+    private Cidade cidade;
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
 
     public String getCep() {
         return cep;

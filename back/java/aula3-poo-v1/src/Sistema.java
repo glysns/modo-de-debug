@@ -1,6 +1,4 @@
 import cadastros.*;
-import correntista.Agencia;
-import correntista.Conta;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -8,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Sistema {
@@ -17,28 +14,27 @@ public class Sistema {
         gleyson.setNome("GLEYSON SAMPAIO");
         gleyson.setCpf("618.677.980-77");
         gleyson.setDataNascimento(LocalDate.of(1990, 7, 8));
-
-        gleyson.getEndereco().setBairro("Angelim");
-        gleyson.getEndereco().setCep("64041-700");
-        gleyson.getEndereco().setLogradouro("Rua Pranchita");
-        gleyson.getEndereco().setNumero("386");
-
-        gleyson.getCidade().setNome("Teresina");
-
-        gleyson.getConta().setNumero("76509-");
-
-        gleyson.getAgencia().setNumero("3345-0");
-
         gleyson.setSexo(Sexo.MASCULINO);
-        gleyson.setUf(Uf.PI);
         gleyson.setEstadoCivil(EstadoCivil.CASADO);
 
-        List<Cadastro> cadastros = new ArrayList<>();
-        cadastros.add(gleyson);
+        Endereco endereco = new Endereco();
+        endereco.setBairro("Angelim");
+        endereco.setCep("64041-700");
+        endereco.setLogradouro("Rua Pranchita");
+        endereco.setNumero("386");
 
-        escreverLayoutDelimitado(cadastros);
+        Cidade teresina = new Cidade();
+        teresina.setNome("Teresina");
+        teresina.setUf(Uf.PI);
+        endereco.setCidade(teresina);
+
+        gleyson.setEndereco(endereco);
+
+        System.out.println(gleyson.getEndereco().getCidade().getUf());
+        System.out.println(gleyson.getEndereco().getCidade().getNome()
+        );
+
     }
-
     public static void escreverLayoutDelimitado(List<Cadastro> cadastros) {
         System.out.println("***** - LAYOUT DELIMITADO - *****");
 
@@ -72,5 +68,3 @@ public class Sistema {
         }
     }
 }
-// tentei usando o exemplo do sintaxe e de alguns artigos, mas ao executar é exibido um erro(mandei via watts).
-// em questão de código o que eu tiver de dúvida(funcionalidades) estudarei.
