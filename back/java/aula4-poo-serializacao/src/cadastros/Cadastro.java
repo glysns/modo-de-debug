@@ -11,13 +11,8 @@ public class Cadastro {
     private LocalDate dataNascimento;
     private String cpf;
     private Endereco endereco;
-    private Conta conta;
-    private Agencia agencia;
     private Sexo sexo;
     private EstadoCivil estadoCivil;
-
-    private Cidade cidade;
-
     private Telefone telefone;
     private TelefoneTipo telefoneTipo;
 
@@ -35,40 +30,6 @@ public class Cadastro {
 
     public void setTelefoneTipo(TelefoneTipo telefoneTipo) {
         this.telefoneTipo = telefoneTipo;
-    }
-
-    private Uf uf;
-
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
-
-    public Uf getUf() {
-        return uf;
-    }
-
-    public void setUf(Uf uf) {
-        this.uf = uf;
-    }
-
-    public Conta getConta() {
-        return conta;
-    }
-
-    public void setConta(Conta conta) {
-        this.conta = conta;
-    }
-
-    public Agencia getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(Agencia agencia) {
-        this.agencia = agencia;
     }
 
     public Sexo getSexo() {

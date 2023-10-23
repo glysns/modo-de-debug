@@ -41,32 +41,35 @@ public class Sistema {
         conta.setAgencia(agencia);
         conta.setCadastro(gleyson);
 
-    }
-    public static void escreverLayoutDelimitado(List<Cadastro> cadastros) {
-        System.out.println("***** - LAYOUT DELIMITADO - *****");
+        escreverLayoutDelimitado(gleyson);
+        //escreverLayoutDelimitado(conta);
 
+    }
+    public static void escreverLayoutDelimitado(Cadastro cadastro) {
+        System.out.println("***** - LAYOUT DELIMITADO - *****");
         try {
             StringBuilder conteudo = new StringBuilder();
+            conteudo.append(cadastro.getCpf()).append(";");
+            conteudo.append(cadastro.getNome()).append(";");
+            conteudo.append(cadastro.getDataNascimento()).append(";");
+            conteudo.append(cadastro.getSexo()).append(";");
+            conteudo.append(cadastro.getEstadoCivil()).append(";");
 
-            for (Cadastro cadastro : cadastros) {
-                conteudo.append(cadastro.getNome()).append(";");
-                conteudo.append(cadastro.getCpf()).append(";");
-                conteudo.append(cadastro.getDataNascimento()).append(";");
-                conteudo.append(cadastro.getEndereco().getBairro()).append(";");
-                conteudo.append(cadastro.getEndereco().getCep()).append(";");
-                conteudo.append(cadastro.getEndereco().getLogradouro()).append(";");
-                conteudo.append(cadastro.getEndereco().getNumero()).append(";");
-                conteudo.append(cadastro.getCidade().getNome()).append(";");
-                conteudo.append(cadastro.getConta().getNumero()).append(";");
-                conteudo.append(cadastro.getAgencia().getNumero()).append(";");
-                conteudo.append(cadastro.getSexo()).append(";");
-                conteudo.append(cadastro.getUf()).append(";");
-                conteudo.append(cadastro.getEstadoCivil()).append(";");
-                conteudo.append(System.lineSeparator());
-            }
+            conteudo.append(cadastro.getEndereco().getBairro()).append(";");
+            conteudo.append(cadastro.getEndereco().getCep()).append(";");
+            conteudo.append(cadastro.getEndereco().getLogradouro()).append(";");
+            conteudo.append(cadastro.getEndereco().getNumero()).append(";");
+            conteudo.append(cadastro.getEndereco().getCidade().getNome()).append(";");
+            conteudo.append(cadastro.getEndereco().getCidade().getUf());
+
+            conteudo.append(System.lineSeparator());
+
             System.out.println(conteudo.toString());
 
-            Path arquivoDestino = Paths.get("C:\\arquivo-csv\\cadastros-modelo-delimitado.csv");
+            Path arquivoDestino = Paths.get("C:\\estudo\\modo-de-debug\\cadastro.csv");
+
+            //este método cria os diretórios antes de tentativa de escrever o arquivo
+            Files.createDirectories(arquivoDestino.getParent());
 
             Files.write(arquivoDestino, conteudo.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
 
