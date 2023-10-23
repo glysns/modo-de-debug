@@ -35,37 +35,6 @@ public class Sistema {
         );
 
     }
-    public static void escreverLayoutDelimitado(List<Cadastro> cadastros) {
-        System.out.println("***** - LAYOUT DELIMITADO - *****");
-
-        try {
-            StringBuilder conteudo = new StringBuilder();
-
-            for (Cadastro cadastro : cadastros) {
-                conteudo.append(cadastro.getNome()).append(";");
-                conteudo.append(cadastro.getCpf()).append(";");
-                conteudo.append(cadastro.getDataNascimento()).append(";");
-                conteudo.append(cadastro.getEndereco().getBairro()).append(";");
-                conteudo.append(cadastro.getEndereco().getCep()).append(";");
-                conteudo.append(cadastro.getEndereco().getLogradouro()).append(";");
-                conteudo.append(cadastro.getEndereco().getNumero()).append(";");
-                conteudo.append(cadastro.getCidade().getNome()).append(";");
-                conteudo.append(cadastro.getConta().getNumero()).append(";");
-                conteudo.append(cadastro.getAgencia().getNumero()).append(";");
-                conteudo.append(cadastro.getSexo()).append(";");
-                conteudo.append(cadastro.getUf()).append(";");
-                conteudo.append(cadastro.getEstadoCivil()).append(";");
-                conteudo.append(System.lineSeparator());
-            }
-            System.out.println(conteudo.toString());
-
-            Path arquivoDestino = Paths.get("C:\\arquivo-csv\\cadastros-modelo-delimitado.csv");
-
-            Files.write(arquivoDestino, conteudo.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
+    
 }
 
