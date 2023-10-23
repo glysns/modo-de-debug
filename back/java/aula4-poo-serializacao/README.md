@@ -6,7 +6,7 @@
 |Campo|Tamanho|
 |-----|-------|
 |CPF|15|
-|NOME|50|
+|NOME|30|
 |NASCTO|10|
 |SEXO|15|
 |E. CIVIL|15|

@@ -85,9 +85,28 @@ public class Sistema {
             StringBuilder conteudo = new StringBuilder();
             //considere ter acesso a um layout via documentação
 
+            String logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem="RAIMUNDO NONATO LOUREIRO CASTELO BRANCO";
+
+            logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem="GLEYSON SAMPAIO"; //só possui 15 caracteres
+
+            if(logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length() > 30) {
+                logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem = logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.substring(0, 30); //o que é substring
+            }else{
+                //pegar a diferença do nome para preencher com espaços em branco
+
+                int espacosEmBrancosAdicionais = 30 - logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length();
+
+                while(logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length()<30){
+
+                    logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem = logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.concat( " ");
+                    System.out.println("tamanho é " + logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length());
+                }
+            }
+            System.out.println("Agora eu sou: " + logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem);
+
             //agora vc verá o poder da classe String em ação
             conteudo.append(String.format("%-15.15s", cadastro.getCpf()) );
-            conteudo.append(String.format("%-50.50s", cadastro.getNome()) );
+            conteudo.append(String.format("%-30.30s", cadastro.getNome()) );
             conteudo.append(cadastro.getDataNascimento());
             conteudo.append(String.format("%-15.15s", cadastro.getSexo().name()) );
             conteudo.append(String.format("%-15.15s", cadastro.getEstadoCivil().name()) );
