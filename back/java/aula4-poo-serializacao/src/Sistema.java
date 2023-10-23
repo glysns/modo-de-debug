@@ -42,6 +42,8 @@ public class Sistema {
         conta.setCadastro(gleyson);
 
         escreverLayoutDelimitado(gleyson);
+        escreverLayoutPosicional(gleyson);
+
         //escreverLayoutDelimitado(conta);
 
     }
@@ -55,10 +57,10 @@ public class Sistema {
             conteudo.append(cadastro.getSexo()).append(";");
             conteudo.append(cadastro.getEstadoCivil()).append(";");
 
-            conteudo.append(cadastro.getEndereco().getBairro()).append(";");
-            conteudo.append(cadastro.getEndereco().getCep()).append(";");
             conteudo.append(cadastro.getEndereco().getLogradouro()).append(";");
             conteudo.append(cadastro.getEndereco().getNumero()).append(";");
+            conteudo.append(cadastro.getEndereco().getBairro()).append(";");
+            conteudo.append(cadastro.getEndereco().getCep()).append(";");
             conteudo.append(cadastro.getEndereco().getCidade().getNome()).append(";");
             conteudo.append(cadastro.getEndereco().getCidade().getUf());
 
@@ -66,13 +68,42 @@ public class Sistema {
 
             System.out.println(conteudo.toString());
 
-            Path arquivoDestino = Paths.get("C:\\estudo\\modo-de-debug\\cadastro.csv");
+            Path arquivoDestino = Paths.get("C:\\estudo\\modo-de-debug\\cadastro-delimitado.csv");
 
             //este método cria os diretórios antes de tentativa de escrever o arquivo
             Files.createDirectories(arquivoDestino.getParent());
 
             Files.write(arquivoDestino, conteudo.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
 
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static void escreverLayoutPosicional(Cadastro cadastro) {
+        System.out.println("***** - LAYOUT POSICIONAL - *****");
+        try {
+            StringBuilder conteudo = new StringBuilder();
+            //considere ter acesso a um layout via documentação
+
+            //agora vc verá o poder da classe String em ação
+            conteudo.append(String.format("%-15.15s", cadastro.getCpf()) );
+            conteudo.append(String.format("%-50.50s", cadastro.getNome()) );
+            conteudo.append(cadastro.getDataNascimento());
+            conteudo.append(String.format("%-15.15s", cadastro.getSexo().name()) );
+            conteudo.append(String.format("%-15.15s", cadastro.getEstadoCivil().name()) );
+
+            conteudo.append(String.format("%-40.40s", cadastro.getEndereco().getLogradouro()) );
+            conteudo.append(String.format("%-6.6s", cadastro.getEndereco().getNumero()) );
+            conteudo.append(String.format("%-30.30s", cadastro.getEndereco().getBairro()) );
+            conteudo.append(String.format("%-10.10s", cadastro.getEndereco().getCep()) );
+            conteudo.append(String.format("%-40.40s", cadastro.getEndereco().getCidade().getNome()) );
+            conteudo.append(cadastro.getEndereco().getCidade().getUf());
+
+            System.out.println(conteudo.toString());
+            Path arquivoDestino = Paths.get("C:\\estudo\\modo-de-debug\\cadastro-posicional.txt");
+            //este método cria os diretórios antes de tentativa de escrever o arquivo
+            Files.createDirectories(arquivoDestino.getParent());
+            Files.write(arquivoDestino, conteudo.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
