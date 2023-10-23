@@ -45,6 +45,7 @@ public class Sistema {
         escreverLayoutPosicional(gleyson);
 
         //escreverLayoutDelimitado(conta);
+        //escreverLayoutPosicional(conta);
 
     }
     public static void escreverLayoutDelimitado(Cadastro cadastro) {
@@ -92,12 +93,8 @@ public class Sistema {
             if(logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length() > 30) {
                 logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem = logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.substring(0, 30); //o que é substring
             }else{
-                //pegar a diferença do nome para preencher com espaços em branco
-
-                int espacosEmBrancosAdicionais = 30 - logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length();
 
                 while(logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length()<30){
-
                     logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem = logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.concat( " ");
                     System.out.println("tamanho é " + logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem.length());
                 }
