@@ -65,11 +65,11 @@ public class Sistema {
             conteudo.append(cadastro.getEndereco().getCidade().getNome()).append(";");
             conteudo.append(cadastro.getEndereco().getCidade().getUf());
 
-            conteudo.append(System.lineSeparator());
+            //conteudo.append(System.lineSeparator());
 
             System.out.println(conteudo.toString());
 
-            Path arquivoDestino = Paths.get("C:\\estudo\\modo-de-debug\\cadastro-delimitado.csv");
+            Path arquivoDestino = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastro-delimitado.csv");
 
             //este método cria os diretórios antes de tentativa de escrever o arquivo
             Files.createDirectories(arquivoDestino.getParent());
@@ -85,7 +85,7 @@ public class Sistema {
         try {
             StringBuilder conteudo = new StringBuilder();
             //considere ter acesso a um layout via documentação
-
+          /*
             String logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem="RAIMUNDO NONATO LOUREIRO CASTELO BRANCO";
 
             logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem="GLEYSON SAMPAIO"; //só possui 15 caracteres
@@ -100,7 +100,7 @@ public class Sistema {
                 }
             }
             System.out.println("Agora eu sou: " + logicaQuandoNaoConhecoOsRecursosBasicosDaLinguagem);
-
+            */
             //agora vc verá o poder da classe String em ação
             conteudo.append(String.format("%-15.15s", cadastro.getCpf()) );
             conteudo.append(String.format("%-30.30s", cadastro.getNome()) );
@@ -116,7 +116,7 @@ public class Sistema {
             conteudo.append(cadastro.getEndereco().getCidade().getUf());
 
             System.out.println(conteudo.toString());
-            Path arquivoDestino = Paths.get("C:\\estudo\\modo-de-debug\\cadastro-posicional.txt");
+            Path arquivoDestino = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastro-posicional.txt");
             //este método cria os diretórios antes de tentativa de escrever o arquivo
             Files.createDirectories(arquivoDestino.getParent());
             Files.write(arquivoDestino, conteudo.toString().getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
