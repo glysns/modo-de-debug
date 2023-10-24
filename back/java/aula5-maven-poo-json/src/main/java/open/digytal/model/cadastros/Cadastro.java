@@ -1,16 +1,24 @@
 package open.digytal.model.cadastros;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 import java.time.LocalDate;
 
 public class Cadastro {
     private String nome;
-    private LocalDate dataNascimento;
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    //@JsonDeserialize(using = LocalDateDeserializer.class)
+    //@JsonSerialize(using = LocalDateSerializer.class)
+   // private LocalDate dataNascimento;
     private String cpf;
     private Endereco endereco;
     private Sexo sexo;
     private EstadoCivil estadoCivil;
     private Telefone telefone;
-    private TelefoneTipo telefoneTipo;
 
     public Telefone getTelefone() {
         return telefone;
@@ -18,14 +26,6 @@ public class Cadastro {
 
     public void setTelefone(Telefone telefone) {
         this.telefone = telefone;
-    }
-
-    public TelefoneTipo getTelefoneTipo() {
-        return telefoneTipo;
-    }
-
-    public void setTelefoneTipo(TelefoneTipo telefoneTipo) {
-        this.telefoneTipo = telefoneTipo;
     }
 
     public Sexo getSexo() {
@@ -60,13 +60,6 @@ public class Cadastro {
         this.nome = nome;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
 
     public String getCpf() {
         return cpf;
@@ -75,4 +68,16 @@ public class Cadastro {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    /*
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+     */
+
 }

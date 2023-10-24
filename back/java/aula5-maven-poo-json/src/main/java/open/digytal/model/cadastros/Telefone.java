@@ -4,6 +4,7 @@ public class Telefone {
     private Integer ddi;
     private Integer ddd;
     private Long numero;
+    private TelefoneTipo tipo;
 
     public Integer getDdi() {
         return ddi;
@@ -27,5 +28,13 @@ public class Telefone {
 
     public void setNumero(Long numero) {
         this.numero = numero;
+    }
+
+    public TelefoneTipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TelefoneTipo tipo) {
+        this.tipo = tipo;
     }
 }
