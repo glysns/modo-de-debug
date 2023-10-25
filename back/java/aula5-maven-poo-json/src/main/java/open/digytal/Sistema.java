@@ -1,16 +1,24 @@
 package open.digytal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import open.digytal.model.cadastros.*;
 import open.digytal.model.correntista.Agencia;
 import open.digytal.model.correntista.Conta;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Sistema {
     public static void main(String[] args) throws Exception {
+        //simulando obter o seu objeto de qualquer origem
+        //lembre-se aplique o conceito de responsabilidade única
+        //SEMPRE QUE POSSÍVEL
         Conta contaGleyson = consultarContaGleyson();
 
         //a partir de agora, você estará utilizando as classes
@@ -18,13 +26,34 @@ public class Sistema {
 
         ObjectMapper conversor = new ObjectMapper();
 
+        //converter objeto em json
         String json = conversor.writeValueAsString(contaGleyson);
-
         System.out.println("O json do objeto conta com as respectivas dependencias é:");
         System.out.println(json);
+        Path arquivoDestino = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastro-unico.json");
+        Files.createDirectories(arquivoDestino.getParent());
+        Files.write(arquivoDestino, json.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
+
+        List<Conta> contas = consultarContas();
+
+        json = conversor.writeValueAsString(contas);
+        arquivoDestino = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastros.json");
+        Files.createDirectories(arquivoDestino.getParent());
+        Files.write(arquivoDestino, json.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
+
 
     }
+    /*
 
+
+      // pretty print - json lindão visualmente
+      String json = conversor.writerWithDefaultPrettyPrinter().writeValueAsString(contaGleyson);
+
+      //usar padrão americano para conversão dos campos data e hora com LocalDate e LocalTime
+      conversor.registerModule(new JavaTimeModule());
+      conversor.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+   */
     //imagina que esta conta já está em seu banco de dados
     static Conta consultarContaGleyson(){
         Cadastro gleyson = new Cadastro();
@@ -65,15 +94,17 @@ public class Sistema {
 
         return conta;
     }
-    /*
+    static List<Conta> consultarContas(){
+        Conta conta = consultarContaGleyson();
+        List<Conta> contas = new ArrayList<>();
+        contas.add(conta);
 
+        conta = consultarContaGleyson();
+        conta.getCadastro().setNome("RAIMUNDO NONATO LOUREIRO CASTELO BRANCO");
+        conta.getCadastro().setCpf("786.490.986-12");
 
-        // pretty print - json lindão visualmente
-        String json = conversor.writerWithDefaultPrettyPrinter().writeValueAsString(contaGleyson);
+        contas.add(conta);
+        return contas;
 
-        //usar padrão americano para conversão dos campos data e hora com LocalDate e LocalTime
-        conversor.registerModule(new JavaTimeModule());
-        conversor.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-
-     */
+    }
 }
