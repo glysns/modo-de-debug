@@ -2,6 +2,8 @@ package open.digytal;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import open.digytal.model.cadastros.*;
 import open.digytal.model.correntista.Agencia;
 import open.digytal.model.correntista.Conta;
@@ -26,8 +28,20 @@ public class Sistema {
         //da biblioteca Jackson
 
         ObjectMapper conversor = new ObjectMapper();
+        conversor.registerModule(new JavaTimeModule());
+        conversor.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+
+        String json = conversor.writeValueAsString(contaGleyson);
+        System.out.println("O json do objeto conta com as respectivas dependencias é:");
+        System.out.println(json);
+        Path arquivoDestino = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastro-unico.json");
+        Files.createDirectories(arquivoDestino.getParent());
+        Files.write(arquivoDestino, json.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
+
 
         //converter objeto em json
+        /*
         String json = conversor.writeValueAsString(contaGleyson);
         System.out.println("O json do objeto conta com as respectivas dependencias é:");
         System.out.println(json);
@@ -42,16 +56,19 @@ public class Sistema {
         Files.createDirectories(arquivoDestino.getParent());
         Files.write(arquivoDestino, json.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
 
+
+         */
+
+        /*
         //olha quem voltou
         Path arquivoOrigem = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastro-unico.json");
-
+        contaGleyson = null;
         contaGleyson = conversor.readValue(arquivoOrigem.toFile(), Conta.class);
         System.out.println(contaGleyson.getCadastro().getNome());
-
         //olha quem voltou
         arquivoOrigem = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastros.json");
 
-        contas = conversor.readValue(arquivoOrigem.toFile(), new TypeReference<List<Conta>>(){});
+        List<Conta> contas = conversor.readValue(arquivoOrigem.toFile(), new TypeReference<List<Conta>>(){});
 
         System.out.println(contas.size());
         contas.stream().forEach(conta -> System.out.println(conta.getCadastro().getNome()));
@@ -62,6 +79,8 @@ public class Sistema {
         //Array -> LinkedList
         //Conta[] contas = conversor.readValue(arquivoOrigem.toFile(), ArrayList.class);
 
+        *
+         */
     }
     /*
 
@@ -79,7 +98,7 @@ public class Sistema {
         Cadastro gleyson = new Cadastro();
         gleyson.setNome("GLEYSON SAMPAIO");
         gleyson.setCpf("618.677.980-77");
-        //gleyson.setDataNascimento(LocalDate.of(1990, 8, 8));
+        gleyson.setDataNascimento(LocalDate.of(1990, 8, 8));
         gleyson.setSexo(Sexo.MASCULINO);
         gleyson.setEstadoCivil(EstadoCivil.CASADO);
         Telefone telefone = new Telefone();

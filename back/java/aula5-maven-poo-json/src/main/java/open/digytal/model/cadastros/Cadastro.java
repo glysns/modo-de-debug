@@ -9,11 +9,11 @@ public class Cadastro {
     //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     //@JsonDeserialize(using = LocalDateDeserializer.class)
     //@JsonSerialize(using = LocalDateSerializer.class)
-    //private LocalDate dataNascimento;
+    private LocalDate dataNascimento;
     private String cpf;
     private Endereco endereco;
     private Sexo sexo;
-    //@JsonProperty("estado_civil")
+    @JsonProperty("estado_civil")
     private EstadoCivil estadoCivil;
     private Telefone telefone;
 
@@ -66,7 +66,7 @@ public class Cadastro {
         this.cpf = cpf;
     }
 
-    /*
+
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
@@ -75,6 +75,6 @@ public class Cadastro {
         this.dataNascimento = dataNascimento;
     }
 
-     */
+
 
 }
