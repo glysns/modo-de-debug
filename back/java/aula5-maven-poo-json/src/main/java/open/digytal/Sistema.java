@@ -1,5 +1,6 @@
 package open.digytal;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import open.digytal.model.cadastros.*;
 import open.digytal.model.correntista.Agencia;
@@ -41,6 +42,25 @@ public class Sistema {
         Files.createDirectories(arquivoDestino.getParent());
         Files.write(arquivoDestino, json.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
 
+        //olha quem voltou
+        Path arquivoOrigem = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastro-unico.json");
+
+        contaGleyson = conversor.readValue(arquivoOrigem.toFile(), Conta.class);
+        System.out.println(contaGleyson.getCadastro().getNome());
+
+        //olha quem voltou
+        arquivoOrigem = Paths.get("C:\\estudos\\modo-de-debug\\files\\cadastros.json");
+
+        contas = conversor.readValue(arquivoOrigem.toFile(), new TypeReference<List<Conta>>(){});
+
+        System.out.println(contas.size());
+        contas.stream().forEach(conta -> System.out.println(conta.getCadastro().getNome()));
+
+        //Map -> LinkedList
+        //Map contas = conversor.readValue(arquivoOrigem.toFile(), Conta[].class);
+
+        //Array -> LinkedList
+        //Conta[] contas = conversor.readValue(arquivoOrigem.toFile(), ArrayList.class);
 
     }
     /*
