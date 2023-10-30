@@ -15,7 +15,7 @@ public class ClassePessoa {
     public ClassePessoa(){
 
     }
-    //construtor com argumentos com base EM todos os atributos da classes
+    //construtor com argumentos com base EM todos os atributos da classe
     //vai com calma blzinha !!, nem sempre este será o melhor atalho
     public ClassePessoa(LocalDate dataNascimento, String sexo, String nome) {
         this.dataNascimento = dataNascimento;

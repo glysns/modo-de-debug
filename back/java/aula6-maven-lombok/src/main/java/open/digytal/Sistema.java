@@ -25,7 +25,6 @@ public class Sistema {
         //pessoaLombok = new ClassePessoaLombok(); // -> impossivel
         pessoaLombok.setNome("gleyson sampaio de oliveira");
 
-
         System.out.println(pessoaLombok.getNome() + "," + pessoaLombok.getSexo() + "," + pessoaLombok.getDataNascimento());
         System.out.println(pessoaLombok.getDatabaseId());
 
